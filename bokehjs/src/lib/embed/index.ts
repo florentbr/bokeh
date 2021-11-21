@@ -56,7 +56,8 @@ async function _embed_items(docs_json: string | DocsJson, render_items: RenderIt
 
   const docs: {[key: string]: Document} = {}
   for (const [docid, doc_json] of entries(docs_json)) {
-    docs[docid] = Document.from_json(doc_json)
+    const [doc] = Document.from_json(doc_json)
+    docs[docid] = doc
   }
 
   const views: View[][] = []
